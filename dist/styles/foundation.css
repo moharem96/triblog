@@ -1,0 +1,615 @@
+/* Global Styles */
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(255, 255, 255, 0.9137254902);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+/* Header */
+header {
+  width: 65vw;
+  min-height: 70px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+header #logo:hover {
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row nowrap;
+}
+ul a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: #000000;
+  padding: 1.5rem 1.2rem;
+  font-size: 1.01rem;
+}
+
+header a:hover {
+  background-color: #eae7e7;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+img[alt=logo] {
+  width: 5rem;
+  height: 1.875rem;
+}
+
+#small-screens-navbar {
+  display: none;
+}
+#small-screens-navbar > div {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#small-screens-navbar > div div {
+  width: 50%;
+  height: 4px;
+  margin: 2px 0;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+#small-screens-navbar > div div:nth-child(2) {
+  width: 100%;
+}
+#small-screens-navbar > div:hover div {
+  width: 100%;
+}
+#small-screens-navbar ul {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 70px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3411764706);
+}
+#small-screens-navbar ul li a {
+  padding: 1rem;
+  color: #ffffff;
+}
+#small-screens-navbar ul li a:hover {
+  color: #000000;
+}
+#small-screens-navbar ul.show {
+  display: block;
+}
+
+/* Landing section */
+main h1 {
+  font-size: 2.3rem;
+  text-align: center;
+  border-radius: 6px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.625rem 1.875rem;
+}
+
+main section {
+  position: relative;
+}
+main section img {
+  width: 100%;
+  height: calc(100vh - 4.375rem);
+}
+main section h1 {
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  border: none;
+}
+main section div {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4901960784);
+  width: 100%;
+  height: calc(100vh - 4.375rem);
+}
+main section h6 {
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-style: italic;
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: normal;
+}
+main section .go-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.3rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main section .go-down i {
+  animation: bouncing 1.5s infinite;
+}
+
+@keyframes bouncing {
+  0%, 10%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 60% {
+    transform: translateY(-15px);
+  }
+}
+/* About Triathlon Section */
+#about-triathlon {
+  width: 65vw;
+  margin: 2.5rem auto;
+}
+#about-triathlon > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  margin: 2.5rem auto;
+}
+#about-triathlon > div div {
+  position: relative;
+  padding: 2.5rem;
+  padding-left: 4.375rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+#about-triathlon > div > div::before {
+  content: attr(data-card-number);
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #ffffff;
+}
+#about-triathlon > div > div h2 {
+  margin: 10px 0;
+}
+
+#articles {
+  margin-bottom: 2.5rem;
+}
+#articles > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 75vw;
+  margin: 0 auto;
+}
+#articles > div > div {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 90%;
+  box-shadow: none;
+  margin: 0 auto;
+}
+#articles > div > div > div {
+  width: 25rem;
+  height: 30rem;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+#articles > div img {
+  width: 100%;
+  height: 20rem;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 0.9375rem;
+  transition: transform 0.3s ease-in-out;
+}
+#articles > div > div > div:hover {
+  box-shadow: 4px 2px 16px 5px rgba(0, 0, 0, 0.4);
+}
+#articles > div > div > div:hover img {
+  transform: scale(1.1);
+}
+#articles > div a {
+  border-top: 1px solid rgba(0, 0, 0, 0.2705882353);
+  padding: 10px 12px 0;
+  color: #2196f3;
+  font-weight: bolder;
+  margin: 10px 0;
+}
+#articles > div h3,
+#articles > div p {
+  padding: 0 12px;
+  margin: 10px 0;
+}
+
+.im-sections {
+  margin: 3.5rem 0;
+  text-align: center;
+}
+.im-sections img {
+  width: 5rem;
+  height: 6.25rem;
+}
+.im-sections h1 {
+  margin-bottom: 1.5rem;
+}
+.im-sections > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 75vw;
+  margin: 0 auto;
+}
+.im-sections > div > div {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 90%;
+  box-shadow: none;
+  margin: 0 auto;
+}
+.im-sections > div > div > div {
+  width: 25rem;
+  height: 30rem;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.im-sections > div img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px 6px 0 0;
+  transition: transform 0.3s ease-in-out;
+}
+.im-sections > div > div > div:hover {
+  box-shadow: 4px 2px 16px 5px rgba(0, 0, 0, 0.4);
+}
+.im-sections > div > div > div:hover img {
+  transform: scale(1.05);
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.prev-btn {
+  position: absolute;
+  left: 0;
+}
+
+.next-btn {
+  position: absolute;
+  right: 0;
+}
+
+.slide {
+  margin: 0 20px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.2588235294);
+}
+
+#plan {
+  width: 75vw;
+  margin: 4rem auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+#plan p {
+  margin: 1rem 0;
+}
+#plan a {
+  display: block;
+  padding: 0.625rem 1.25rem;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  width: fit-content;
+}
+#plan a:hover {
+  background-color: #0e6ebd;
+}
+
+/* Table Section */
+table {
+  border-collapse: collapse;
+  font-family: sans-serif;
+  margin: 2.5rem auto;
+  width: 65vw;
+}
+table td,
+table th {
+  padding: 15px;
+  text-align: center;
+}
+table thead th {
+  background-color: #54585d;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid #54585d;
+}
+table tbody td {
+  color: #636363;
+  border: 1px solid #dddfe1;
+}
+table tbody tr {
+  background-color: #f9fafb;
+}
+table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+#newsletter {
+  background-color: #f9f9f9;
+  padding: 1.875rem;
+  text-align: center;
+}
+#newsletter h2 {
+  margin-bottom: 1.25rem;
+}
+
+#newsletter-form {
+  box-shadow: none;
+}
+#newsletter-form input[type=email] {
+  padding: 0.625rem;
+  width: 18.75rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.3125rem;
+  margin-right: 0.625rem;
+  margin: 0 0.625rem;
+}
+#newsletter-form button {
+  width: fit-content;
+  padding: 0.625rem 1.25rem;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+#newsletter-form button:hover {
+  background-color: #0e6ebd;
+}
+
+/* Footer Section */
+footer {
+  padding: 1.875rem 0;
+  background-color: #54585d;
+}
+footer ul {
+  display: block;
+  width: 65vw;
+  margin: 0 auto;
+}
+footer ul li {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 1.875rem;
+}
+
+@media screen and ( max-width: 1200px) {
+  header,
+  #articles > div,
+  table, #events > div, #gears > div, #plan {
+    width: 95vw;
+  }
+  #about-triathlon {
+    width: 95vw;
+  }
+  #about-triathlon > div > div {
+    padding: 2.5rem;
+  }
+  #about-triathlon > div > div::before {
+    display: none;
+  }
+}
+@media screen and ( max-width: 992px) {
+  header > ul {
+    display: none;
+  }
+  #small-screens-navbar {
+    display: block;
+  }
+  .prev-btn,
+  .next-btn {
+    display: none;
+  }
+}
+@media screen and ( max-width: 768px) {
+  main h1 {
+    font-size: 2.2rem;
+  }
+  #about-triathlon {
+    width: 95vw;
+  }
+  #about-triathlon > div {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  #articles > div {
+    max-width: 95vw;
+  }
+  #articles > div img {
+    height: 14rem;
+  }
+  #articles > div > div > div {
+    width: 14rem;
+    height: 28rem;
+  }
+}
+@media screen and ( max-width: 576px) {
+  main section h6 {
+    font-size: 1.3rem;
+  }
+  .im-sections > div > div > div {
+    width: 14rem;
+    height: 20rem;
+  }
+  #newsletter-form button {
+    margin-top: 1.125rem;
+  }
+  table {
+    width: 100vw;
+  }
+  table td,
+  table table th {
+    padding: 12px 0px;
+  }
+}
+main #article-img {
+  width: 100%;
+  height: calc(100vh - 70px);
+}
+main #overview {
+  width: 65vw;
+  margin: 0 auto;
+}
+main #overview h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+main .articles {
+  width: 65vw;
+  margin: 1.2rem auto;
+}
+main .articles h3 {
+  font-size: 1.5rem;
+}
+main .articles p {
+  margin: 0.5rem 0;
+}
+main .articles ul {
+  flex-flow: column nowrap;
+}
+main .articles ul li {
+  margin: 0.2rem 0;
+}
+
+@media screen and ( max-width: 768px) {
+  main #overview, main .articles {
+    width: 95vw;
+  }
+  main .articles {
+    width: 90vw;
+  }
+}
+form {
+  width: 75vw;
+  margin: 2rem auto;
+  padding: 1.25rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.625rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+form .form-group {
+  flex: 1 1 calc(50% - 10px);
+}
+@media (max-width: 768px) {
+  form .form-group {
+    flex: 1 1 100%;
+  }
+}
+form button {
+  width: 100%;
+  padding: 0.625rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+form button:hover {
+  background-color: #0056b3;
+}
+
+#infoText {
+  width: 75vw;
+  margin: 0 auto 2rem;
+}
+
+@media screen and ( max-width: 1200px) {
+  form, #infoText {
+    width: 95vw;
+  }
+}
+
+/*# sourceMappingURL=foundation.css.map */

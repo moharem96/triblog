@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triathlon Training Plan Form</title>
+    <link rel="stylesheet" href="./dist/styles/foundation.css" />
+    <link rel="stylesheet" href="./dist/styles/all.min.css" />
+  </head>
+  <body>
+    <header id="header">
+      <img src="./images/logo.png" alt="logo" />
+      <!-- start of Big Screens navbar -->
+      <ul>
+        <li><a href="index.html#about-triathlon">About</a></li>
+        <li><a href="index.html#articles">Articles</a></li>
+        <li><a href="index.html#records">Records</a></li>
+        <li><a href="index.html#gears">Gears</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="index.html#plan">Training</a></li>
+        <li><a href="index.html#contacts">Contacts</a></li>
+      </ul>
+      <!-- end of Big Screens navbar -->
+
+      <!-- start of Small Screens navbar -->
+      <div id="small-screens-navbar">
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul>
+          <li><a href="index.html#about-triathlon">About</a></li>
+          <li><a href="index.html#articles">Articles</a></li>
+          <li><a href="index.html#records">Records</a></li>
+          <li><a href="index.html#gears">Gears</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#plan">Training</a></li>
+          <li><a href="index.html#contacts">Contacts</a></li>
+        </ul>
+      </div>
+      <!-- end of Small Screens navbar -->
+    </header>
+
+    <main>
+      <form id="trainingForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="raceDate">Race Date:</label>
+          <input type="date" id="raceDate" name="raceDate" required />
+        </div>
+        <div class="form-group">
+          <label for="trainingDays">Training Days per Week:</label>
+          <input type="number" id="trainingDays" name="trainingDays" required />
+        </div>
+        <div class="form-group">
+          <label for="hoursPerDay">Hours per Day:</label>
+          <input type="number" id="hoursPerDay" name="hoursPerDay" required />
+        </div>
+        <div class="form-group">
+          <label for="swimDays">Swim Days per Week:</label>
+          <input type="number" id="swimDays" name="swimDays" required />
+        </div>
+        <div class="form-group">
+          <label for="bikeDays">Bike Days per Week:</label>
+          <input type="number" id="bikeDays" name="bikeDays" required />
+        </div>
+        <div class="form-group">
+          <label for="runDays">Run Days per Week:</label>
+          <input type="number" id="runDays" name="runDays" required />
+        </div>
+        <div class="form-group">
+          <label for="fitnessLevel">Fitness Level:</label>
+          <select id="fitnessLevel" name="fitnessLevel">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="group">find a group:</label>
+          <select id="group" name="group">
+            <option value="beginner">Prefer to train alone</option>
+            <option value="intermediate">find me a group</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comments">Additional Comments:</label>
+          <textarea id="comments" name="comments"></textarea>
+        </div>
+        <button type="submit">Make Your Plan</button>
+      </form>
+      <div id="infoText">
+        <p>
+          *Your information will be sent to a coach who will create a
+          personalized training plan for you and send it back via email.
+        </p>
+      </div>
+    </main>
+
+    <footer id="contacts">
+      <ul>
+        <li><i class="fa-brands fa-facebook-f"></i></li>
+        <li><i class="fa-brands fa-x-twitter"></i></li>
+        <li><i class="fa-solid fa-envelope"></i></li>
+        <li><i class="fa-brands fa-youtube"></i></li>
+      </ul>
+    </footer>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

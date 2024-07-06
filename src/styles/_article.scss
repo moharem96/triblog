@@ -1,0 +1,3 @@
+@use '../mixins/article' as articleMixin;
+
+@include articleMixin.article-styles();

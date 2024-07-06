@@ -1,0 +1,585 @@
+@use "variables" as *;
+@use "breakpoints";
+@use "sass:math";
+
+@function pxToRem($px, $base: 16) {
+  @return #{math.div($px, $base)}rem;
+}
+
+/* Header */
+header {
+  width: 65vw;
+  min-height: 70px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  #logo:hover {
+    background-color: #ffffff;
+    box-shadow: none;
+
+  }
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row nowrap;
+
+  a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: #000000;
+    padding: 1.5rem 1.2rem;
+    font-size: 1.01rem;
+  }
+}
+
+header a:hover{
+  background-color: #eae7e7;
+  box-shadow: 0 2px 15px rgb(0 0 0 / 40%);
+}
+
+img[alt="logo"] {
+  width: pxToRem(80);
+  height: pxToRem(30);
+}
+
+// Styles for small screens
+#small-screens-navbar {
+  display: none;
+  > div {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    div {
+      width: 50%;
+      height: 4px;
+      margin: 2px 0;
+      background-color: #333;
+      transition: all 0.3s ease;
+    }
+    div:nth-child(2) {
+      width: 100%;
+    }
+  }
+
+  > div:hover div {
+    width: 100%;
+  }
+
+  ul {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: 70px;
+    right: 0;
+    background: #00000057;
+
+    li {
+      a {
+        padding: pxToRem(16);
+        color: #ffffff;
+      }
+
+      a:hover {
+        color: #000000;
+      }
+    }
+  }
+
+  ul.show {
+    display: block;
+  }
+}
+
+/* Landing section */
+main {
+  h1 {
+    font-size: 2.3rem;
+    text-align: center;
+    border-radius: 6px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: pxToRem(10) pxToRem(30);
+  }
+}
+
+main {
+  section {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: calc(100vh - pxToRem(70));
+    }
+
+    h1 {
+      color: $color-secondary;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      border: none;
+    }
+
+    div {
+      position: absolute;
+      top: 0;
+      background-color: #0000007d;
+      width: 100%;
+      height: calc(100vh - pxToRem(70));
+    }
+
+    h6 {
+      color: $color-secondary;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-style: italic;
+      font-size: 1.7rem;
+      text-align: center;
+      font-weight: normal;
+    }
+
+    .go-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.3rem;
+      color: $color-secondary;
+      cursor: pointer;
+      transition: 0.3s;
+
+      i {
+        animation: bouncing 1.5s infinite;
+      }
+    }
+  }
+}
+
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+/* About Triathlon Section */
+#about-triathlon {
+  width: 65vw;
+  margin: pxToRem(40) auto;
+
+  > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: pxToRem(40);
+    margin: pxToRem(40) auto;
+  }
+
+  > div div {
+    position: relative;
+    padding: pxToRem(40);
+    padding-left: pxToRem(70);
+    border-radius: 6px;
+    background-color: $color-secondary;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 40%);
+  }
+
+  > div > div::before {
+    content: attr(data-card-number);
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    width: pxToRem(60);
+    height: pxToRem(60);
+    border-radius: 50%;
+    background-color: #000000;
+    color: $color-secondary;
+  }
+
+  > div > div h2 {
+    margin: 10px 0;
+  }
+}
+
+#articles {
+  margin-bottom: 2.5rem;
+  > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 75vw;
+    margin: 0 auto;
+  }
+
+  > div > div {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 90%;
+    box-shadow: none;
+    margin: 0 auto;
+  }
+
+  > div > div > div {
+    width: pxToRem(400);
+    height: pxToRem(480);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  > div img {
+    width: 100%;
+    height: pxToRem(320);
+    border-radius: 6px 6px 0 0;
+    margin-bottom: pxToRem(15);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  > div > div > div:hover {
+    box-shadow: 4px 2px 16px 5px rgb(0 0 0 / 40%);
+    img {
+      transform: scale(1.1);
+    }
+  }
+
+  > div a {
+    border-top: 1px solid #00000045;
+    padding: 10px 12px 0;
+    color: #2196f3;
+    font-weight: bolder;
+    margin: 10px 0;
+  }
+
+  > div h3,
+  > div p {
+    padding: 0 12px;
+    margin: 10px 0;
+  }
+}
+
+.im-sections {
+    margin: 3.5rem 0;
+    text-align: center;
+
+    img {
+      width: pxToRem(80);
+      height: pxToRem(100);
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    > div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 75vw;
+      margin: 0 auto;
+    }
+  
+    > div > div {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      width: 90%;
+      box-shadow: none;
+      margin: 0 auto;
+    }
+  
+    > div > div > div {
+      width: pxToRem(400);
+      height: pxToRem(480);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+  
+    > div img {
+      width: 100%;
+      height: 100%;
+      border-radius: 6px 6px 0 0;
+      // margin-bottom: pxToRem(15);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    > div > div > div:hover {
+      box-shadow: 4px 2px 16px 5px rgb(0 0 0 / 40%);
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  .prev-btn {
+    position: absolute;
+    left: 0;
+  }
+
+  .next-btn {
+    position: absolute;
+    right: 0;
+  }
+
+  .slide {
+    margin: 0 20px;
+    flex: 0 0 auto;
+    border: 1px solid #00000042;
+  }
+
+  // training plan section
+
+  #plan {
+    width: 75vw;
+    margin: 4rem auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      display: block;
+      padding: pxToRem(10) pxToRem(20);
+      background-color: #2196f3;
+      color: #fff;
+      border: none;
+      border-radius: pxToRem(5);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1rem;
+      width: fit-content;
+
+      &:hover {
+        background-color: #0e6ebd;
+      }
+    }
+  }
+
+
+/* Table Section */
+table {
+  border-collapse: collapse;
+  font-family: sans-serif;
+  margin: pxToRem(40) auto;
+  width: 65vw;
+
+  td,
+  th {
+    padding: 15px;
+    text-align: center;
+  }
+
+  thead th {
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 1px solid $color-primary;
+  }
+
+  tbody td {
+    color: #636363;
+    border: 1px solid #dddfe1;
+  }
+
+  tbody tr {
+    background-color: #f9fafb;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: $color-secondary;
+  }
+}
+
+// newsletter section
+#newsletter {
+  background-color: #f9f9f9;
+  padding: pxToRem(30);
+  text-align: center;
+
+  h2 {
+    margin-bottom: pxToRem(20);
+  }
+}
+
+#newsletter-form{
+  box-shadow: none;
+input[type="email"] {
+  padding: pxToRem(10);
+  width: pxToRem(300);
+  border: pxToRem(1) solid #ccc;
+  border-radius: pxToRem(5);
+  margin-right: pxToRem(10);
+  margin: 0 pxToRem(10);
+  
+}
+
+button {
+  width: fit-content;
+  padding: pxToRem(10) pxToRem(20);
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: pxToRem(5);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0e6ebd;
+}
+}
+
+
+/* Footer Section */
+footer {
+  padding: pxToRem(30) 0;
+  background-color: $color-primary;
+
+  ul {
+    display: block;
+    width: 65vw;
+    margin: 0 auto;
+
+    li {
+      display: inline-block;
+      color: $color-secondary;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-right: pxToRem(30);
+    }
+  }
+}
+
+@media #{breakpoints.$screen-lt-xl} {
+  header,
+  #articles > div,
+  table, #events > div, #gears > div, #plan {
+    width: 95vw;
+  }
+
+  #about-triathlon {
+    width: 95vw;
+
+    > div > div {
+      padding: 2.5rem;
+    }
+
+    > div > div::before {
+      display: none;
+    }
+  }
+}
+
+@media #{breakpoints.$screen-lt-lg} {
+  header {
+    > ul {
+      display: none;
+    }
+  }
+
+  #small-screens-navbar {
+    display: block;
+  }
+
+  .prev-btn,
+  .next-btn {
+    display: none;
+  }
+}
+
+@media #{breakpoints.$screen-lt-md} {
+  main h1 {
+    font-size: 2.2rem;
+  }
+
+  #about-triathlon {
+    width: 95vw;
+
+    > div {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+  }
+
+  #articles {
+  
+  > div {
+    max-width: 95vw;
+
+    img {
+      height: 14rem;
+    }
+
+    > div > div {
+      width: 14rem;
+      height: 28rem;
+    }
+  }
+}
+}
+
+@media #{breakpoints.$screen-lt-sm} {
+  main section {
+    h6 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .im-sections {
+    > div > div > div {
+      width: 14rem;
+      height: 20rem;
+    }
+  }
+
+  #newsletter-form button {
+    margin-top: pxToRem(18);
+  }
+
+  table {
+    width: 100vw;
+
+    td,
+    table th {
+      padding: 12px 0px;
+    }
+  }
+}

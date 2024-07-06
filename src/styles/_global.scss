@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+/* Global Styles */
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffffe9;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #777;
+}

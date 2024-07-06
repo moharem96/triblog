@@ -1,0 +1,16 @@
+@use "sass:map";
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$screen-lt-sm: "screen and ( max-width: #{ map.get($grid-breakpoints, 'sm')})";
+$screen-lt-md: "screen and ( max-width: #{ map.get($grid-breakpoints, 'md')})";
+$screen-lt-lg: "screen and ( max-width: #{ map.get($grid-breakpoints, 'lg')})";
+$screen-lt-xl: "screen and ( max-width: #{ map.get($grid-breakpoints, 'xl')})";
+$screen-lt-xxl: "screen and ( max-width: #{ map.get($grid-breakpoints, 'xxl')})";
