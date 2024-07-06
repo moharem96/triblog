@@ -404,6 +404,7 @@ table tbody tr:nth-child(odd) {
 }
 
 #newsletter-form {
+  width: 100%;
   box-shadow: none;
 }
 #newsletter-form input[type=email] {
