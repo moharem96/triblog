@@ -1,0 +1,9 @@
+@mixin grid-layout($min-width: 380px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}

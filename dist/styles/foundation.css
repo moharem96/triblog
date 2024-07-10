@@ -45,9 +45,9 @@ header > div {
   min-height: 70px;
   margin: 0 auto;
   display: flex;
+  align-items: center;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
 }
 header > div #logo:hover {
   background-color: #ffffff;
@@ -62,8 +62,8 @@ ul {
 }
 ul a {
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
+  flex-flow: row nowrap;
   color: #000000;
   padding: 1.5rem 1.2rem;
   font-size: 1.01rem;
@@ -212,9 +212,9 @@ main section .go-down i {
   content: attr(data-card-number);
   position: absolute;
   display: flex;
+  align-items: center;
   flex-flow: row nowrap;
   justify-content: center;
-  align-items: center;
   font-size: 2rem;
   top: 50%;
   left: -30px;
@@ -352,8 +352,8 @@ button {
   width: 75vw;
   margin: 4rem auto;
   display: flex;
-  flex-flow: column nowrap;
   align-items: center;
+  flex-flow: column nowrap;
 }
 #plan p {
   margin: 1rem 0;
@@ -498,6 +498,7 @@ footer ul li {
     width: 95vw;
   }
   #about-triathlon > div {
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
   #articles > div {
@@ -534,6 +535,7 @@ main #article-img {
   width: 100%;
   height: calc(100vh - 70px);
   margin-top: 70px;
+  filter: brightness(0.8);
 }
 main #overview {
   width: 65vw;
