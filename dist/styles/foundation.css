@@ -32,6 +32,14 @@ p {
 
 /* Header */
 header {
+  width: 100%;
+  background: #ffffff;
+  position: fixed;
+  z-index: 2;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2392156863);
+  top: 0;
+}
+header > div {
   width: 65vw;
   min-height: 70px;
   margin: 0 auto;
@@ -40,7 +48,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header #logo:hover {
+header > div #logo:hover {
   background-color: #ffffff;
   box-shadow: none;
 }
@@ -100,7 +108,7 @@ img[alt=logo] {
   z-index: 2;
   top: 70px;
   right: 0;
-  background: rgba(0, 0, 0, 0.3411764706);
+  background: rgba(0, 0, 0, 0.7);
 }
 #small-screens-navbar ul li a {
   padding: 1rem;
@@ -129,6 +137,7 @@ main section {
 main section img {
   width: 100%;
   height: calc(100vh - 4.375rem);
+  margin-top: 70px;
 }
 main section h1 {
   color: #ffffff;
@@ -141,7 +150,7 @@ main section h1 {
 }
 main section div {
   position: absolute;
-  top: 0;
+  top: 70px;
   background-color: rgba(0, 0, 0, 0.4901960784);
   width: 100%;
   height: calc(100vh - 4.375rem);
@@ -449,9 +458,12 @@ footer ul li {
 }
 
 @media screen and ( max-width: 1200px) {
-  header,
+  header > div,
   #articles > div,
-  table, #events > div, #gears > div, #plan {
+  table,
+  #events > div,
+  #gears > div,
+  #plan {
     width: 95vw;
   }
   #about-triathlon {
@@ -465,7 +477,7 @@ footer ul li {
   }
 }
 @media screen and ( max-width: 992px) {
-  header > ul {
+  header > div ul {
     display: none;
   }
   #small-screens-navbar {
@@ -519,6 +531,7 @@ footer ul li {
 main #article-img {
   width: 100%;
   height: calc(100vh - 70px);
+  margin-top: 70px;
 }
 main #overview {
   width: 65vw;
@@ -565,6 +578,7 @@ form {
   flex-wrap: wrap;
   gap: 1.25rem;
   justify-content: center;
+  margin-top: 6.25rem;
 }
 form label {
   display: block;
@@ -608,7 +622,8 @@ form button:hover {
 }
 
 @media screen and ( max-width: 1200px) {
-  form, #infoText {
+  form,
+  #infoText {
     width: 95vw;
   }
 }

@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triathlon Training Plan Form</title>
-    <link rel="stylesheet" href="./dist/styles/foundation.css" />
-    <link rel="stylesheet" href="./dist/styles/all.min.css" />
+    <link rel="stylesheet" href="./dist/styles/foundation.css">
+    <link rel="stylesheet" href="./dist/styles/all.min.css">
   </head>
   <body>
     <header id="header">
-      <img src="./images/logo.png" alt="logo" />
-      <!-- start of Big Screens navbar -->
-      <ul>
-        <li><a href="index.html#about-triathlon">About</a></li>
-        <li><a href="index.html#articles">Articles</a></li>
-        <li><a href="index.html#records">Records</a></li>
-        <li><a href="index.html#gears">Gears</a></li>
-        <li><a href="index.html#events">Events</a></li>
-        <li><a href="index.html#plan">Training</a></li>
-        <li><a href="index.html#contacts">Contacts</a></li>
-      </ul>
-      <!-- end of Big Screens navbar -->
-
-      <!-- start of Small Screens navbar -->
-      <div id="small-screens-navbar">
-        <div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+      <div>
+        <img src="./images/logo.png" alt="logo">
+        <!-- start of Big Screens navbar -->
         <ul>
           <li><a href="index.html#about-triathlon">About</a></li>
           <li><a href="index.html#articles">Articles</a></li>
@@ -38,23 +21,42 @@
           <li><a href="index.html#plan">Training</a></li>
           <li><a href="index.html#contacts">Contacts</a></li>
         </ul>
+        <!-- end of Big Screens navbar -->
+
+        <!-- start of Small Screens navbar -->
+        <div id="small-screens-navbar">
+          <div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <ul>
+            <li><a href="index.html#about-triathlon">About</a></li>
+            <li><a href="index.html#articles">Articles</a></li>
+            <li><a href="index.html#records">Records</a></li>
+            <li><a href="index.html#gears">Gears</a></li>
+            <li><a href="index.html#events">Events</a></li>
+            <li><a href="index.html#plan">Training</a></li>
+            <li><a href="index.html#contacts">Contacts</a></li>
+          </ul>
+        </div>
+        <!-- end of Small Screens navbar -->
       </div>
-      <!-- end of Small Screens navbar -->
     </header>
 
     <main>
       <form id="trainingForm">
         <div class="form-group">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" required >
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required >
         </div>
         <div class="form-group">
           <label for="age">Age:</label>
-          <input type="number" id="age" name="age" required />
+          <input type="number" id="age" name="age" required >
         </div>
         <div class="form-group">
           <label for="gender">Gender:</label>
@@ -65,27 +67,27 @@
         </div>
         <div class="form-group">
           <label for="raceDate">Race Date:</label>
-          <input type="date" id="raceDate" name="raceDate" required />
+          <input type="date" id="raceDate" name="raceDate" required >
         </div>
         <div class="form-group">
           <label for="trainingDays">Training Days per Week:</label>
-          <input type="number" id="trainingDays" name="trainingDays" required />
+          <input type="number" id="trainingDays" name="trainingDays" required >
         </div>
         <div class="form-group">
           <label for="hoursPerDay">Hours per Day:</label>
-          <input type="number" id="hoursPerDay" name="hoursPerDay" required />
+          <input type="number" id="hoursPerDay" name="hoursPerDay" required >
         </div>
         <div class="form-group">
           <label for="swimDays">Swim Days per Week:</label>
-          <input type="number" id="swimDays" name="swimDays" required />
+          <input type="number" id="swimDays" name="swimDays" required >
         </div>
         <div class="form-group">
           <label for="bikeDays">Bike Days per Week:</label>
-          <input type="number" id="bikeDays" name="bikeDays" required />
+          <input type="number" id="bikeDays" name="bikeDays" required >
         </div>
         <div class="form-group">
           <label for="runDays">Run Days per Week:</label>
-          <input type="number" id="runDays" name="runDays" required />
+          <input type="number" id="runDays" name="runDays" required >
         </div>
         <div class="form-group">
           <label for="fitnessLevel">Fitness Level:</label>
