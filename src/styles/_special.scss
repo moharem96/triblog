@@ -450,6 +450,7 @@ table {
 #newsletter-form {
   width: 100%;
   box-shadow: none;
+  margin-top: 0;
   input[type="email"] {
     padding: pxToRem(10);
     width: pxToRem(300);
